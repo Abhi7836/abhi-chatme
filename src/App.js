@@ -1,5 +1,6 @@
-import React,{ useState } from 'react';
-import { ChatEngine,ChatSettings } from 'react-chat-engine';
+import React,{ useState,useCallback ,useEffect} from 'react';
+import axios from 'axios';
+import { ChatEngine } from 'react-chat-engine';
 import ChatFeed from './components/ChatFeed';
 import LoginForm from './components/LoginForm';
 import Header from './components/Header';
@@ -8,14 +9,17 @@ import "antd/dist/antd.css";
 import './App.css';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
-
+const private_key='7e38b731-a6fd-4252-a3af-c6edce2cea0d';
 
 function App() {
   const [login,setLogin]=useState(true);
+  //const userid = localStorage.getItem('userid');
+  
+ 
   function setloginstate(s) {
     setLogin(s);
   }
-//  if (!localStorage.getItem('username')) return <LoginForm />;
+
 
   if (!localStorage.getItem('username')) 
  { return (

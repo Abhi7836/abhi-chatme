@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Button,Avatar} from 'antd';
-import { SendOutlined, PictureOutlined } from '@ant-design/icons';
+import { Button} from 'antd';
 
-const projectID = '14f5d563-3afb-4010-b0f0-6080b252d534';
+
+
 const private_key='7e38b731-a6fd-4252-a3af-c6edce2cea0d';
 
 const SignupForm = (props) => {
@@ -25,7 +25,6 @@ const SignupForm = (props) => {
           "email": email,
           "first_name": firstname,
           "last_name":lastname,
-        //	"custom_json": {"fav_game": "Candy Crush", "high_score": 2002}
        }
 
        var config = {
@@ -35,7 +34,7 @@ const SignupForm = (props) => {
         data : userdata
       };
         try {
-          await  axios(config); 
+          await  axios(config).then(res=>{localStorage.setItem('userid', res.data.id);}); 
           localStorage.setItem('username', username);
           localStorage.setItem('password', password);
           window.location.reload();
