@@ -1,10 +1,12 @@
 import React,{ useState } from 'react';
-import { Input} from 'antd';
+//import { Form, Input, Button, Checkbox } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-
+import { Button} from 'antd';
 import axios from 'axios';
+//import Alert from 'react-bootstrap/Alert';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
+
 
 function LoginForm(props) {
   const [username, setUsername] = useState('');
@@ -21,20 +23,21 @@ function LoginForm(props) {
 
     try {
       await axios.get('https://api.chatengine.io/chats', { headers: authObject });
-
       localStorage.setItem('username', username);
       localStorage.setItem('password', password);
       window.location.reload();
       setError('');
     } catch (err) {
-      setError('Oops, incorrect credentials.');
-      
+       
+     
+      setError('Oops, incorrect credentials.');   
     }
 
 
-  };
+};
 
   return (
+    
     <div className="wrapper">
       <div className="form">
         <h1 className="title">Chat - login</h1>
@@ -42,18 +45,18 @@ function LoginForm(props) {
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="input" placeholder="Username" required />
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required  iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}/>
           <div align="center">
-            <button type="submit" className="button">
+            <Button type="primary" shape="round" size={'large'} htmlType="submit">
               <span>Start chatting</span>
-            </button>
+            </Button>
+            <Button type="primary" shape="round" size={'large'} onClick={changelogin} className="ml-5 px-5">
+              <span>Signup?</span>
+            </Button>
           </div>
         </form>
-        <button onClick={changelogin} className="button">
-              <span>Signup?</span>
-        </button>
+        
         <h1>{error}</h1>
       </div>
-    </div>
-
+  </div>
   );
 }
 

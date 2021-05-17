@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Button,Avatar} from 'antd';
+import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 
 const projectID = '14f5d563-3afb-4010-b0f0-6080b252d534';
 const private_key='7e38b731-a6fd-4252-a3af-c6edce2cea0d';
@@ -13,8 +15,7 @@ const SignupForm = (props) => {
   const [error, setError] = useState('');
 
   function changelogin() {props.loginstate(true);}
-    //console.log(userdata);
-
+   
       const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -56,14 +57,14 @@ const SignupForm = (props) => {
           <input type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} className="input" placeholder="First Name" required />
           <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} className="input" placeholder="LastName" required />
           <div align="center">
-            <button type="submit" className="button">
+            <Button type="primary" shape="round" size={'large'} htmlType="submit">
               <span>Start chatting</span>
-            </button>
+            </Button>
+            <Button type="primary" shape="round" size={'large'} onClick={changelogin} className="ml-5 px-5">
+              <span>Login?</span>
+            </Button>
           </div>
         </form>
-        <button onClick={changelogin} className="button">
-              <span>Login?</span>
-        </button>
         <h1>{error}</h1>
       </div>
     </div>
