@@ -1,5 +1,4 @@
-import React,{ useState,useCallback ,useEffect} from 'react';
-import axios from 'axios';
+import React,{ useState} from 'react';
 import { ChatEngine } from 'react-chat-engine';
 import ChatFeed from './components/ChatFeed';
 import LoginForm from './components/LoginForm';
@@ -9,7 +8,6 @@ import "antd/dist/antd.css";
 import './App.css';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
-const private_key='7e38b731-a6fd-4252-a3af-c6edce2cea0d';
 
 function App() {
   const [login,setLogin]=useState(true);
@@ -37,7 +35,6 @@ function App() {
       userName={localStorage.getItem('username')}
       userSecret={localStorage.getItem('password')}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-      //renderChatSettings={(chatAppProps) => <ChatSettings {...chatAppProps} />}
       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
     />
     </div>

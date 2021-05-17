@@ -8,6 +8,7 @@
 
 .ce-chat-list {
   background-color: rgb(240, 240, 240) !important;
+  min-width: 20vh;
 }
 
 .ce-chats-container {

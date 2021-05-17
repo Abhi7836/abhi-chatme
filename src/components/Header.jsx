@@ -1,7 +1,7 @@
 import React,{ useState,useEffect} from 'react';
 import axios from 'axios';
 import {Navbar} from 'react-bootstrap'
-import { Button,Alert } from 'antd';
+import { Button} from 'antd';
 import {PoweroffOutlined} from '@ant-design/icons';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
@@ -20,12 +20,12 @@ function Header() {
     async function fetchData() {
         try {
           await axios.get('https://api.chatengine.io/users/me/', { headers: authObject })
-            .then(res=>{ console.log(res);
+            .then(res=>{ //console.log(res);
               setname({
               first:res.data.first_name,
               last:res.data.last_name,
             })})
-        } catch (e) {console.error(e);
+        } catch (e) {//console.error(e);
          }
     };
     fetchData();
