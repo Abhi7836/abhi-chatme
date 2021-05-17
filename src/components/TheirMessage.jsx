@@ -1,4 +1,6 @@
-const TheirMessage = ({ lastMessage, message }) => {
+import React from 'react'
+
+function TheirMessage({ lastMessage, message }) {
   const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
 
   return (
@@ -25,6 +27,6 @@ const TheirMessage = ({ lastMessage, message }) => {
         )}
     </div>
   );
-};
+}
 
-export default TheirMessage;
+export default TheirMessage

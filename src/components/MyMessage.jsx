@@ -1,4 +1,6 @@
-const MyMessage = ({ message }) => {
+import React from 'react'
+
+function MyMessage({ message }) {
   if (message.attachments && message.attachments.length > 0) {
     return (
       <img
@@ -15,6 +17,6 @@ const MyMessage = ({ message }) => {
       {message.text}
     </div>
   );
-};
+}
 
-export default MyMessage;
+export default MyMessage

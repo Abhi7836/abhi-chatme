@@ -1,8 +1,11 @@
+import React from 'react'
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
 
-const ChatFeed = (props) => {
+
+
+function ChatFeed(props) {
   const { chats, activeChat, userName, messages } = props;
 
   const chat = chats && chats[activeChat];
@@ -58,7 +61,8 @@ const ChatFeed = (props) => {
       </div>
     </div>
   );
-};
+}
 
-export default ChatFeed;
+export default ChatFeed
+
 
