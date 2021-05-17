@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState} from 'react';
 //import { Form, Input, Button, Checkbox } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button} from 'antd';
@@ -24,12 +24,14 @@ function LoginForm(props) {
     try {
       await axios.get('https://api.chatengine.io/chats', { headers: authObject })
       .then(res=>{//console.log(res)
-      });
       localStorage.setItem('username', username);
       localStorage.setItem('password', password);
       window.location.reload();
       setError('');
+    });
+     
     } catch (err) {
+      setPassword('');
       setError('Oops, incorrect credentials.');   
     }
 

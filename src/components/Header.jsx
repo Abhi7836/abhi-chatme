@@ -1,7 +1,7 @@
 import React,{ useState,useEffect} from 'react';
 import axios from 'axios';
 import {Navbar} from 'react-bootstrap'
-import { Button } from 'antd';
+import { Button,Alert } from 'antd';
 import {PoweroffOutlined} from '@ant-design/icons';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
@@ -15,7 +15,8 @@ function Header() {
     const password =  localStorage.getItem('password');
 
       const authObject = { 'Project-ID': projectID, 'User-Name': username, 'User-Secret': password };
-  useEffect(() => {
+     
+ useEffect(() => {
     async function fetchData() {
         try {
           await axios.get('https://api.chatengine.io/users/me/', { headers: authObject })
