@@ -55,8 +55,6 @@ function LoginForm(props) {
             </Button>
           </div>
         </form>
-        
-        <h1>{error}</h1>
       </div>
   </div>
   </>
