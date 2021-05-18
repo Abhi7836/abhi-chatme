@@ -53,7 +53,7 @@ function Header() {
                style={{display:'inline-block'}}
                /><span className="navhed" >{' '}Abhi-chatme</span>
          </Navbar.Brand>
-         <Navbar.Collapse className=" justify-content-center mr-3 navcol"  >
+         <Navbar.Collapse className=" justify-content-center pl-2 mr-3 navcol"  >
           <Navbar.Text style={{color:'white',textAlign:'center'}}>
             Welcome {name.first} {name.last}
           </Navbar.Text>
@@ -61,9 +61,9 @@ function Header() {
        
           <Navbar.Collapse className="justify-content-end mr-3 pr-3">
           <Button
-           style={{backgroundColor:'#7554a0',color:'white',borderColor:'#7554a0'}}
+           style={{backgroundColor:'#7554a0',borderColor:'#7554a0'}}
            icon={<PoweroffOutlined />}
-           onClick={clearlogs}>Logout</Button>
+           onClick={clearlogs}><span className="navhed" >Logout</span></Button>
            </Navbar.Collapse>
          </Navbar>
          
