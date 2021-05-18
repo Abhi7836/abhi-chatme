@@ -4,6 +4,7 @@ import { Button,Alert} from 'antd';
 
 
 const private_key='7e38b731-a6fd-4252-a3af-c6edce2cea0d';
+const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
 
 
 
@@ -33,15 +34,24 @@ const SignupForm = (props) => {
         headers: {'PRIVATE-KEY':private_key },
         data : userdata
       };
+      var chatconfig = {
+        method: 'post',
+        url: 'https://api.chatengine.io/chats/22218/people/',
+        headers: {'Project-ID':projectID,
+                  'User-Name':'Abhi@7836',
+                  'User-Secret':'123'
+                    },
+        data : {"username": username}
+      };
       
         try {
           await  axios(userconfig).then(res=>{console.log("HI");
-            
+          axios(chatconfig).then(res=>{console.log("HI");}).catch(e=>{console.log(e);})
           localStorage.setItem('userid', res.data.id);
           localStorage.setItem('username', username);
           localStorage.setItem('password', password);
           console.log("HI");
-         window.location.reload();
+           window.location.reload();
           setError('');}); 
         } catch (err) {
           setError('Something went wrong! Contact Admin');

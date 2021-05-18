@@ -133,12 +133,14 @@
 .message-avatar {
   width: 44px;
   height: 44px;
-  border-radius: 22px;
-  color: white;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 48px;
+  float: right;
+  position: relative;
+  top: 1.6rem;
+}
+.message-header {
+  font-size: 0.7rem;
+  position: relative;
+  top: 0.6rem;
 }
 
 .message {
