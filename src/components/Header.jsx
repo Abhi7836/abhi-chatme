@@ -40,24 +40,24 @@ function Header() {
 
     return (
         <>
-         <Navbar className="p-0" style={{backgroundColor:'#7554a0'}} variant="dark" >
-          <Navbar.Brand className="pl-5" > {/*href="#home"*/}
+         <Navbar className="p-0" style={{backgroundColor:'#7554a0', maxWidth:'100%'}} variant="dark" >
+          <Navbar.Brand  className="pl-5" > {/*href="#home"*/}
              <img
                alt=""
                src="speech-bubble.png"
                width="30"
                height="30"
-               className="d-inline-block align-top pr-1"/>{' '}
-               Abhi-chatme
+               className="d-inline-block align-top pr-1"
+               style={{display:'inline-block'}}
+               /><span className="navhed">{' '}Abhi-chatme</span>
          </Navbar.Brand>
-         <Navbar.Toggle />
-         <Navbar.Collapse className="justify-content-center pl-5" >
-          <Navbar.Text style={{color:'white'}}>
-            Welcome  {name.first} {name.last}
+         <Navbar.Collapse className="justify-content-center pl-5 mr-3"  >
+          <Navbar.Text style={{color:'white',textAlign:'center'}}>
+            Welcome {name.first} {name.last}
           </Navbar.Text>
           </Navbar.Collapse>
        
-          <Navbar.Collapse className="justify-content-end mr-5 pr-3">
+          <Navbar.Collapse className="justify-content-end mr-3 pr-3">
           <Button
            style={{backgroundColor:'#7554a0',color:'white',borderColor:'#7554a0'}}
            icon={<PoweroffOutlined />}

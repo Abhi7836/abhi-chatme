@@ -1,3 +1,9 @@
+@media (max-width: 700px) {
+  .navhed {
+    display: none !important;
+  }
+}
+
 /* CHAT STYLES */
 * {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,

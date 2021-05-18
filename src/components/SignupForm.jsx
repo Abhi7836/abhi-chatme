@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Button} from 'antd';
+import { Button,Alert} from 'antd';
 
 
 
@@ -40,12 +40,14 @@ const SignupForm = (props) => {
           window.location.reload();
           setError('');
         } catch (err) {
-          setError('Oops, incorrect credentials.');
+          setError('Something went wrong! Contact Admin');
         }
 
   };
 
   return (
+  <>
+  {error && (<Alert message= {error}  type="error" style={{textAlign:'center'}}  />)}
     <div className="wrapper">
       <div className="form">
         <h1 className="title">Chat - Signup</h1>
@@ -67,7 +69,7 @@ const SignupForm = (props) => {
         <h1>{error}</h1>
       </div>
     </div>
-
+  </>
   );
 };
 

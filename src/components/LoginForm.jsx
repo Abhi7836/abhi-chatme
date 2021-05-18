@@ -1,9 +1,8 @@
 import React,{ useState} from 'react';
 //import { Form, Input, Button, Checkbox } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { Button} from 'antd';
+import { Button,Alert} from 'antd';
 import axios from 'axios';
-//import Alert from 'react-bootstrap/Alert';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
 
@@ -31,15 +30,16 @@ function LoginForm(props) {
     });
      
     } catch (err) {
-      setPassword('');
-      setError('Oops, incorrect credentials.');   
+      setError('Oops, incorrect credentials.');
+      setPassword('');  
     }
 
 
 };
 
   return (
-    
+    <>
+    {error && (<Alert message= {error}  type="error" style={{textAlign:'center'}}  />)}
     <div className="wrapper">
       <div className="form">
         <h1 className="title">Chat - login</h1>
@@ -59,6 +59,7 @@ function LoginForm(props) {
         <h1>{error}</h1>
       </div>
   </div>
+  </>
   );
 }
 
