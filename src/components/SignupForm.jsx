@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState} from 'react';
 import axios from 'axios';
 import { Button,Alert} from 'antd';
 
 
-
 const private_key='7e38b731-a6fd-4252-a3af-c6edce2cea0d';
+
+
 
 const SignupForm = (props) => {
   const [username, setUsername] = useState('');
@@ -13,7 +14,7 @@ const SignupForm = (props) => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [error, setError] = useState('');
-
+  
   function changelogin() {props.loginstate(true);}
    
       const handleSubmit = async (e) => {
@@ -26,19 +27,22 @@ const SignupForm = (props) => {
           "first_name": firstname,
           "last_name":lastname,
        }
-
-       var config = {
+       var userconfig = {
         method: 'post',
         url: 'https://api.chatengine.io/users/',
         headers: {'PRIVATE-KEY':private_key },
         data : userdata
       };
+      
         try {
-          await  axios(config).then(res=>{localStorage.setItem('userid', res.data.id);}); 
+          await  axios(userconfig).then(res=>{console.log("HI");
+            
+          localStorage.setItem('userid', res.data.id);
           localStorage.setItem('username', username);
           localStorage.setItem('password', password);
-          window.location.reload();
-          setError('');
+          console.log("HI");
+         window.location.reload();
+          setError('');}); 
         } catch (err) {
           setError('Something went wrong! Contact Admin');
         }
