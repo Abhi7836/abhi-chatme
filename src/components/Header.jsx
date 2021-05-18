@@ -6,6 +6,8 @@ import {PoweroffOutlined} from '@ant-design/icons';
 
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
 
+
+
 function Header() {
       const [name,setname]=useState({
        first:"",
@@ -41,7 +43,7 @@ function Header() {
     return (
         <>
          <Navbar className="p-0" style={{backgroundColor:'#7554a0', maxWidth:'100%'}} variant="dark" >
-          <Navbar.Brand  className="pl-5" > {/*href="#home"*/}
+          <Navbar.Brand  className="pl-5 navlogo" > {/*href="#home"*/}
              <img
                alt=""
                src="speech-bubble.png"
@@ -49,9 +51,9 @@ function Header() {
                height="30"
                className="d-inline-block align-top pr-1"
                style={{display:'inline-block'}}
-               /><span className="navhed">{' '}Abhi-chatme</span>
+               /><span className="navhed" >{' '}Abhi-chatme</span>
          </Navbar.Brand>
-         <Navbar.Collapse className="justify-content-center pl-5 mr-3"  >
+         <Navbar.Collapse className=" justify-content-center mr-3 navcol"  >
           <Navbar.Text style={{color:'white',textAlign:'center'}}>
             Welcome {name.first} {name.last}
           </Navbar.Text>

@@ -2,6 +2,17 @@
   .navhed {
     display: none !important;
   }
+  .navbar-text {
+    padding: 0;
+    margin: 0;
+  }
+  .navcol {
+    padding: 0;
+    margin: 0;
+  }
+  .navbar-brand {
+    padding-left: 0.5rem !important;
+  }
 }
 
 /* CHAT STYLES */
