@@ -36,7 +36,7 @@ const SignupForm = (props) => {
       };
       var chatconfig = {
         method: 'post',
-        url: 'https://api.chatengine.io/chats/22218/people/',
+        url: 'https://api.chatengine.io/chats/22322/people/',
         headers: {'Project-ID':projectID,
                   'User-Name':'Abhi@7836',
                   'User-Secret':'123'
