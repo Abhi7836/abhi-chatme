@@ -6,15 +6,18 @@ import {DeleteOutlined  } from '@ant-design/icons';
 const projectID ='14f5d563-3afb-4010-b0f0-6080b252d534';
 
 function MyMessage({ message,chatid }) {
-  
+     const username = localStorage.getItem('username');
+     const password =  localStorage.getItem('password');
+   console.log(message);
   const confirm = async (e) => {
+   
     e.preventDefault();
     var delmsg = {
     method: 'delete',
     url:`https://api.chatengine.io/chats/${chatid}/messages/${message.id}/`,
     headers: {'Project-ID':projectID,
-              'User-Name':'Abhi@7836',
-              'User-Secret':'123'
+              'User-Name':username,
+              'User-Secret':password
                 }
   };
   
